@@ -1,0 +1,150 @@
+/*==================================
+    10.Widget Card CSS
+====================================*/
+
+.widget-small {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    border-radius: 4px;
+    color: #fff;
+    margin-bottom: 30px;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+
+
+    .icon {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        min-width: 85px;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        padding: 20px;
+        background-color: rgba(0, 0, 0, 0.2);
+        border-radius: 4px 0 0 4px;
+        font-size: 2.5rem;
+    }
+
+    .info {
+        -webkit-box-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        padding: 0 20px;
+        -ms-flex-item-align: center;
+        align-self: center;
+
+        h4 {
+            text-transform: uppercase;
+            margin: 0;
+            margin-bottom: 5px;
+            font-weight: 400;
+            font-size: 1.1rem;
+        }
+
+
+        p {
+            margin: 0;
+            font-size: 16px;
+        }
+
+    }
+
+}
+
+
+
+.widget-medium {
+    margin-bottom: 30px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+
+    .symbol {
+        width: 30%;
+        padding: 50px 15px;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        padding: 20px;
+        background-color: rgba(0, 0, 0, 0.2);
+        border-radius: 4px 0 0 4px;
+        font-size: 2.5rem;
+    }
+
+
+    .value {
+        width: 68%;
+        margin-top: 15px;
+        padding-left: 10%;
+        float: right;
+        text-align: center;
+
+        h1 {
+            font-weight: 300;
+        }
+
+        h1,
+        p {
+            margin: 0px;
+            padding: 0px;
+        }
+
+    }
+
+    .symbol,
+    .value {
+        display: inline-block;
+        text-align: center;
+    }
+
+
+
+
+}
+
+
+/*----------Start-sparklinedash-widget--------------*/
+
+#sparkline-widgets {
+    .white-box {
+        padding: 20px 15px;
+        background-color: #fff;
+        height: auto;
+        margin-bottom: 30px;
+        position: relative;
+
+        ul {
+            .text-right {
+                position: absolute;
+                right: 25px;
+                bottom: 40px;
+                font-size: 25px;
+            }
+        }
+
+        h4 {
+            font-size: 17px;
+            font-family: revert;
+            padding-bottom: 10px;
+        }
+    }
+}
+
+
+#jqstooltip {
+    -webkit-box-sizing: content-box !important;
+    -moz-box-sizing: content-box !important;
+    box-sizing: content-box !important
+}
+
+.jqstooltip {
+    z-index: 1900
+}
+
+/*----------End-sparklinedash-widget--------------*/

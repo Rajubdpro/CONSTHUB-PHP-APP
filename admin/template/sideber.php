@@ -35,7 +35,12 @@
                     <span class="nav-label">Users</span>
                 </a>
             </li>
-
+            <li>
+                <a class="nav-item" href="slider-list.php">
+                    <i class="nav-icon fa fa-sliders"></i>
+                    <span class="nav-label">Slider</span>
+                </a>
+            </li>
         </ul>
     </aside>
     <!-- Left sidebar menu end -->

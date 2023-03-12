@@ -16,7 +16,8 @@ class Dashbord extends Database{
      * Start login check section
      */
     public function __construct(){
-        if(isset($_SESSION['id'])){
+        new Database();
+        if(!isset($_SESSION['id'])){
             header('location:login.php');
         }
     }

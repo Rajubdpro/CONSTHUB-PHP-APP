@@ -11,6 +11,7 @@ class Database{
 
     public function __construct()
     {
+        session_start();
         $this->conn = new mysqli($this->servername, $this->dbusername, $this->dbpassword, $this->dbname);
         if($this->conn->connect_error){
             echo"Connection faild";

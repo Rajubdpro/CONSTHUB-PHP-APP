@@ -17,9 +17,9 @@ require('template/header.php');
 							<div class="hero-slider-single-content">
 								<div class="hero-slider-single-content-full">
 									<h2><?php echo $sliderData['heading'];?></h2>
-									<p>Donec scelerisque dolor id nunc dictum, interdum gravida mauris rhoncus. Aliquam at ultrices nunc.</p>
+									<p><?php echo $sliderData['sub_heading'];?></p>
 									<div class="slider-btn">
-										<a class="button-1" href="#">Learn More</a>
+										<a class="button-1" href="<?php echo $sliderData['btn_link'];?>"><?php echo $sliderData['btn'];?></a>
 									</div>
 								</div>
 							</div>

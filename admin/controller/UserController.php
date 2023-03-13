@@ -227,8 +227,3 @@ class UserController extends Database
  * #Extands main database class
  * #User create,update,edit,delete class Using
  */
-
-?>
-
-
-

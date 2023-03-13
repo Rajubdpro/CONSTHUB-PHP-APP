@@ -15,26 +15,21 @@ require('template/header.php');
  */
 
 /**
- *  Start Create user section
- * @param $username,
- * @param $email,
- * @param $password
+ *  Start Create slider section
  */
-if(isset($_POST['submit'])){
+if (isset($_POST['submit'])) {
     $result = $slider->create($_POST);
-    
-if($result == 1 ){
-    echo"<script> alert('Slider create seccessfully');</script>";
-    echo "<script>window.location.href='slider-list.php'</script>";
-}
-elseif($result == 0 ){
-    echo"<script> alert('Slider create faile');</script>";
-}
 
+    if ($result == 1) {
+        echo "<script> alert('Slider create seccessfully');</script>";
+        echo "<script>window.location.href='slider-list.php'</script>";
+    } elseif ($result == 0) {
+        echo "<script> alert('Slider create faile');</script>";
+    }
 }
 
 /**
- *  End User Create section
+ *  End slider Create section
  * @param $username,
  * @param $email,
  * @param $password
@@ -68,17 +63,17 @@ elseif($result == 0 ){
                                                     </div>
                                                 </div>
                                             </div>
-                              
-                                       
+
+
                                             <div class="col-md-12 mb-10">
                                                 <!-- Summernote HTML Editor -->
                                                 <div class="title">
                                                     <label for="validationCustomUsername">Slider Heading</label>
-                                                    <textarea type="text" name="heading" class="form-control"placeholder="Please choose a heading" aria-describedby="inputGroupPrepend" required="" id="summernote"></textarea>
-                    
+                                                    <textarea type="text" name="heading" class="form-control" placeholder="Please choose a heading" aria-describedby="inputGroupPrepend" required="" id="summernote"></textarea>
+
                                                 </div>
                                             </div>
-    
+
                                             <div class="col-md-12 mb-10">
                                                 <label for="validationCustomdescription">Slider Description</label>
                                                 <div class="input-group">
@@ -90,22 +85,22 @@ elseif($result == 0 ){
                                             </div>
                                             <div class="col-md-12 mb-10">
                                                 <label" for="validationCustombutton">Slider Button</label>
-                                                <div class="input-group">
-                                                    <input type="text" name="btn" class="form-control" id="validationCustomheading" placeholder="Please choose a Button" aria-describedby="inputGroupPrepend" required="">
-                                                    <div class="invalid-feedback">
-                                                        Please choose a button.
+                                                    <div class="input-group">
+                                                        <input type="text" name="btn" class="form-control" id="validationCustomheading" placeholder="Please choose a Button" aria-describedby="inputGroupPrepend" required="">
+                                                        <div class="invalid-feedback">
+                                                            Please choose a button.
+                                                        </div>
                                                     </div>
-                                                </div>
                                             </div>
 
                                             <div class="col-md-12 mb-10">
                                                 <label" for="validationCustombutton">Slider Button Link(Optional)</label>
-                                                <div class="input-group">
-                                                    <input type="http" name="btn_link" class="form-control" id="validationCustomheading" placeholder="Please choose a Button" aria-describedby="inputGroupPrepend" required="">
-                                                    <div class="invalid-feedback">
-                                                        Button Link
+                                                    <div class="input-group">
+                                                        <input type="http" name="btn_link" class="form-control" id="validationCustomheading" placeholder="Please choose a Button" aria-describedby="inputGroupPrepend" required="">
+                                                        <div class="invalid-feedback">
+                                                            Button Link
+                                                        </div>
                                                     </div>
-                                                </div>
                                             </div>
 
                                             <div class="col-3">
@@ -126,7 +121,7 @@ elseif($result == 0 ){
 </div>
 
 <!------------------------------
-* #End User List Section
+* #End slider List Section
 ------------------------------>
 
 <!------------------------------

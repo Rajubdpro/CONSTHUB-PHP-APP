@@ -1,4 +1,5 @@
 <?php
+
 /**
  *  Start require section
  * require Connection.php
@@ -10,14 +11,16 @@ require("../connection/connection.php");
  *  End require section
  * require Connection.php
  */
-class Dashbord extends Database{
+class Dashbord extends Database
+{
 
     /**
      * Start login check section
      */
-    public function __construct(){
+    public function __construct()
+    {
         new Database();
-        if(!isset($_SESSION['id'])){
+        if (!isset($_SESSION['id'])) {
             header('location:login.php');
         }
     }
@@ -26,16 +29,16 @@ class Dashbord extends Database{
      * End login check section
      */
 
-/**
- *  Start logout section
- */
-    public function log_out(){
+    /**
+     *  Start logout section
+     */
+    public function log_out()
+    {
         session_unset();
         session_destroy();
         header("location:login.php");
-       }
- /**
- *  End logout section
- */
-
+    }
+    /**
+     *  End logout section
+     */
 }//end class

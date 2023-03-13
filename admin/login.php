@@ -3,23 +3,22 @@
 require("controller/LoginController.php");
 $log_in = new Login();
 
-if(isset($_SESSION['id'])){
+if (isset($_SESSION['id'])) {
     header('location:index.php');
 }
 
-if(isset($_POST['submit'])){
+if (isset($_POST['submit'])) {
     $result = $log_in->log_in($_POST['usernameemail'], $_POST['password']);
-    if($result == 1){
-  
-$_SESSION["log_in"] = true;
-$_SESSION['id'] = $log_in->idUser();
+    if ($result == 1) {
 
-header("location: index.php");
-    }elseif($result == 10){
+        $_SESSION["log_in"] = true;
+        $_SESSION['id'] = $log_in->idUser();
+
+        header("location: index.php");
+    } elseif ($result == 10) {
         echo
         "<script>alert('Wrong password');</script>";
-    }
-    elseif($result == 100){
+    } elseif ($result == 100) {
         echo
         "<script>alert('User Not Registred');</script>";
     }
@@ -90,8 +89,7 @@ header("location: index.php");
                     <input class="form-control" id="for-e" type="text" placeholder="Email">
                 </div>
                 <div class="form-group btn-container">
-                    <button class="btn btn-primary btn-block w-100"><i
-                            class="fa fa-unlock fa-lg fa-fw"></i>RESET</button>
+                    <button class="btn btn-primary btn-block w-100"><i class="fa fa-unlock fa-lg fa-fw"></i>RESET</button>
                 </div>
                 <div class="form-group mt-3">
                     <p class="semibold-text mb-0"><a href="#" data-toggle="flip"><i class="fa fa-angle-left fa-fw"></i>
@@ -111,7 +109,7 @@ header("location: index.php");
     <script src="assets/js/admin.js"></script>
     <script>
         // Login Page Flipbox control
-        $('.login-content [data-toggle="flip"]').click(function () {
+        $('.login-content [data-toggle="flip"]').click(function() {
             $('.login-box').toggleClass('flipped');
             return false;
         });

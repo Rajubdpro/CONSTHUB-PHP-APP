@@ -18,7 +18,7 @@ require('template/header.php');
  *  Start Edit slider details
  --------------------------*/
 
- if (isset($_GET['editid'])) {
+if (isset($_GET['editid'])) {
     $result =  $slider->edit(($_GET['editid']));
 }
 /*----fatch record for updation---*/
@@ -47,7 +47,7 @@ if (isset($_POST['update'])) {
 
 
 <!------------------------------
-* #Start Slider List Section
+* #Start Slider edit Section
 ------------------------------>
 <div class="row">
     <div class="col-xl-12  col-md-12 mt-5">
@@ -74,16 +74,16 @@ if (isset($_POST['update'])) {
                                                     </div>
                                                 </div>
                                             </div>
-                              
+
                                             <div class="col-md-12 mb-10">
                                                 <!-- Summernote HTML Editor -->
                                                 <div class="title">
                                                     <label for="validationCustomUsername">Slider Heading</label>
-                                                    <textarea " type="text" name="heading" class="form-control"placeholder="Please choose a heading" aria-describedby="inputGroupPrepend" required="" id="summernote"><?php echo $result['heading'];?></textarea>
-                    
+                                                    <textarea " type=" text" name="heading" class="form-control" placeholder="Please choose a heading" aria-describedby="inputGroupPrepend" required="" id="summernote"><?php echo $result['heading']; ?></textarea>
+
                                                 </div>
                                             </div>
-    
+
                                             <div class="col-md-12 mb-10">
                                                 <label for="validationCustomdescription">Slider Description</label>
                                                 <div class="input-group">
@@ -95,27 +95,27 @@ if (isset($_POST['update'])) {
                                             </div>
                                             <div class="col-md-12 mb-10">
                                                 <label" for="validationCustombutton">Slider Button</label>
-                                                <div class="input-group">
-                                                    <input type="text" value="<?php echo $result['btn']; ?>" name="btn" class="form-control" id="validationCustomheading" placeholder="Please choose a Button" aria-describedby="inputGroupPrepend" required="">
-                                                    <div class="invalid-feedback">
-                                                        Please choose a button.
+                                                    <div class="input-group">
+                                                        <input type="text" value="<?php echo $result['btn']; ?>" name="btn" class="form-control" id="validationCustomheading" placeholder="Please choose a Button" aria-describedby="inputGroupPrepend" required="">
+                                                        <div class="invalid-feedback">
+                                                            Please choose a button.
+                                                        </div>
                                                     </div>
-                                                </div>
                                             </div>
 
                                             <div class="col-md-12 mb-10">
                                                 <label" for="validationCustombutton">Slider Button Link(Optional)</label>
-                                                <div class="input-group">
-                                                    <input type="http" value="<?php echo $result['btn_link']; ?>" name="btn_link" class="form-control" id="validationCustomheading" placeholder="Please choose a Button" aria-describedby="inputGroupPrepend" required="">
-                                                    <div class="invalid-feedback">
-                                                        Button Link
+                                                    <div class="input-group">
+                                                        <input type="http" value="<?php echo $result['btn_link']; ?>" name="btn_link" class="form-control" id="validationCustomheading" placeholder="Please choose a Button" aria-describedby="inputGroupPrepend" required="">
+                                                        <div class="invalid-feedback">
+                                                            Button Link
+                                                        </div>
                                                     </div>
-                                                </div>
                                             </div>
 
                                             <div class="col-3">
-                                            <input type="hidden" id="update" name="hid" value="<?php echo $result['id'] ?>">
-                                            <input type="submit" name="update" id="update" value="Update Slider" class="btn btn-lg btn-primary">
+                                                <input type="hidden" id="update" name="hid" value="<?php echo $result['id'] ?>">
+                                                <input type="submit" name="update" id="update" value="Update Slider" class="btn btn-lg btn-primary">
                                             </div>
                                         </form>
                                     </div>
@@ -132,7 +132,7 @@ if (isset($_POST['update'])) {
 </div>
 
 <!------------------------------
-* #End User List Section
+* #End slider List Section
 ------------------------------>
 
 <!------------------------------

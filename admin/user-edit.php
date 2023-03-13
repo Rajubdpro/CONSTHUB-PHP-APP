@@ -1,4 +1,5 @@
 <?php
+
 /**--------------------------
  * #Start Require connection
  ----------------------------*/
@@ -47,7 +48,7 @@ if (isset($_POST['update'])) {
                 <div class="col-sm">
                     <form class="needs-validation" novalidate="" action="" method="post" enctype="multipart/form-data">
                         <div class="row">
-                        <div class="col-md-4 mb-10">
+                            <div class="col-md-4 mb-10">
                                 <label for="validationCustomUsername">User</label>
                                 <div class="input-group">
                                     <div class="input-group-prepend">

@@ -1,4 +1,5 @@
 <?php
+
 /**
  *  Start require section
  * require Controller.php,Header.php
@@ -20,20 +21,18 @@ require('template/header.php');
  * @param $password
  */
 
-if(isset($_POST['submit'])){
- 
-    $result = $user->create($_POST["username"], $_POST["email"], $_POST["password"]);
-    
-if($result == 1 ){
-    echo"<script> alert('Registration seccessfully');</script>";
-}
-elseif($result == 10 ){
-    echo"<script> alert('Username or Email has already taken');</script>";
-}
-if($result == 100 ){
-    echo"<script> alert('Password does not match');</script>";
-}
+if (isset($_POST['submit'])) {
 
+    $result = $user->create($_POST["username"], $_POST["email"], $_POST["password"]);
+
+    if ($result == 1) {
+        echo "<script> alert('Registration seccessfully');</script>";
+    } elseif ($result == 10) {
+        echo "<script> alert('Username or Email has already taken');</script>";
+    }
+    if ($result == 100) {
+        echo "<script> alert('Password does not match');</script>";
+    }
 }
 
 /**
@@ -51,12 +50,12 @@ if($result == 100 ){
 <div class="row">
     <div class="col-xl-12 mt-5">
         <section class="ap-sec-wrapper title">
-        <h5 class="title-text">Create User</h5>
+            <h5 class="title-text">Create User</h5>
             <div class="row">
                 <div class="col-sm">
                     <form class="needs-validation" novalidate="" action="" method="post" enctype="multipart/form-data">
                         <div class="row">
-                        <div class="col-md-4 mb-10">
+                            <div class="col-md-4 mb-10">
                                 <label for="validationCustomUsername">User</label>
                                 <div class="input-group">
                                     <div class="input-group-prepend">
@@ -68,7 +67,7 @@ if($result == 100 ){
                                     </div>
                                 </div>
                             </div>
-                        <div class="col-md-4 mb-10">
+                            <div class="col-md-4 mb-10">
                                 <label for="validationCustomUsername">Username</label>
                                 <div class="input-group">
                                     <div class="input-group-prepend">
@@ -107,7 +106,7 @@ if($result == 100 ){
                                 </div>
                             </div>
                         </div>
-                       <input type="submit" name="submit" value="Create" class="btn btn-primary">
+                        <input type="submit" name="submit" value="Create" class="btn btn-primary">
                     </form>
                 </div>
             </div>

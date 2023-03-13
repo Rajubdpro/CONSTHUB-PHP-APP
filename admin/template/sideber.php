@@ -41,6 +41,18 @@
                     <span class="nav-label">Slider</span>
                 </a>
             </li>
+            <li>
+                <a class="nav-item" href="about-list.php">
+                <i class=" nav-icon fa fa-address-card"></i>
+                    <span class="nav-label">About</span>
+                </a>
+            </li>
+            <li>
+                <a class="nav-item" href="services-list.php">
+                <i class=" nav-icon fa fa-globe"></i>
+                    <span class="nav-label">Services</span>
+                </a>
+            </li>
         </ul>
     </aside>
     <!-- Left sidebar menu end -->

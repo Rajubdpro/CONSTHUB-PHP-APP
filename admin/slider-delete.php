@@ -3,8 +3,8 @@
 /**
  * Start Require connection 
  */
-require("controller/UserController.php");
-$user = new UserController();
+require("controller/SliderController.php");
+$slider = new SliderController();
 
 /**
  * End Require connection 
@@ -17,8 +17,8 @@ $user = new UserController();
 
 if (isset($_GET['deleteid'])) {
     $deleteid = $_GET['deleteid'];
-    $user->deleteuser($deleteid);
-    header("location:user-list.php");
+    $slider->deleteslider($deleteid);
+    header("location:slider-list.php");
 } //if isset close
 
 /**

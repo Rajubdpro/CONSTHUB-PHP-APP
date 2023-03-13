@@ -31,7 +31,8 @@
     <script src="assets/js/chart.js"></script>
     <!-- Jquery counterup javascript -->
     <script src="assets/js/jquery.counterup.min.js"></script>
-
+    <!-- Summernote lite javascript -->
+    <script src="assets/vendors/summernote/js/summernote-lite.min.js"></script>
   <!-- Jquery datatable javascript -->
   <script src="assets/vendors/datatable/jquery.dataTables.min.js"></script>
     <!-- Datatables bootstrap javascript -->
@@ -41,7 +42,28 @@
     <!-- Custom script -->
     <script src="assets/js/functions.js"></script>
     <script src="assets/js/admin.js"></script>
-
+    <script>
+        $('#summernote').summernote({
+            placeholder: 'Hello stand alone ui',
+            tabsize: 2,
+            height: 300,
+            toolbar: [
+                ['style', ['style']],
+                ['font', ['bold', 'underline', 'clear']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['table', ['table']],
+                ['insert', ['link', 'picture', 'video']],
+                ['view', ['fullscreen', 'codeview', 'help']]
+            ]
+        });
+    </script>
+    <script>
+        tinymce.init({
+            selector: '#tnmyEditor',
+            height: 350
+        });
+    </script>
     <script>
         $('#sampleTable').DataTable();
     </script>

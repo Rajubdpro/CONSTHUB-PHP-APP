@@ -17,10 +17,27 @@
             <script src="assets/js/html5shiv.min.js"></script>
             <script src="assets/js/respond.min.js"></script>
         <![endif]-->
+            <!-- Summernote CSS -->
+    <link rel="stylesheet" href="assets/vendors/summernote/css/summernote.min.css">
     <!-- Template assets CSS -->
     <link rel="stylesheet" type="text/css" href="assets/css/assets.css" />
     <!-- Main style -->
     <link rel="stylesheet" type="text/css" href="assets/css/dashboard.css" />
+    <style>
+     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap');
+a{
+  text-decoration: none;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Poppins', sans-serif;
+}
+    </style>
 </head>
 
 <body class="sidebar-mini">

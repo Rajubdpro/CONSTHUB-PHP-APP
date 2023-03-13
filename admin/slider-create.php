@@ -1,10 +1,11 @@
 <?php
+
 /**
  *  Start require section
  * require Controller.php,Header.php
  */
-require("controller/UserController.php");
-$user = new UserController();
+require("controller/SliderController.php");
+$slider = new SliderController();
 
 require('template/header.php');
 
@@ -19,19 +20,15 @@ require('template/header.php');
  * @param $email,
  * @param $password
  */
-
 if(isset($_POST['submit'])){
- 
-    $result = $user->create($_POST["username"], $_POST["email"], $_POST["password"]);
+    $result = $slider->create($_POST);
     
 if($result == 1 ){
-    echo"<script> alert('Registration seccessfully');</script>";
+    echo"<script> alert('Slider create seccessfully');</script>";
+    echo "<script>window.location.href='slider-list.php'</script>";
 }
-elseif($result == 10 ){
-    echo"<script> alert('Username or Email has already taken');</script>";
-}
-if($result == 100 ){
-    echo"<script> alert('Password does not match');</script>";
+elseif($result == 0 ){
+    echo"<script> alert('Slider create faile');</script>";
 }
 
 }
@@ -42,74 +39,87 @@ if($result == 100 ){
  * @param $email,
  * @param $password
  */
-
 ?>
 
 <!------------------------------
-* #Start User List Section
+* #Start Slider List Section
 ------------------------------>
 <div class="row">
-    <div class="col-xl-12 mt-5">
+    <div class="col-xl-12  col-md-12 mt-5">
         <section class="ap-sec-wrapper title">
-        <h5 class="title-text">Create User</h5>
-            <div class="row">
-                <div class="col-sm">
-                    <form class="needs-validation" novalidate="" action="" method="post" enctype="multipart/form-data">
-                        <div class="row">
-                        <div class="col-md-4 mb-10">
-                                <label for="validationCustomUsername">User</label>
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text" id="inputGroupPrepend">@</span>
-                                    </div>
-                                    <input type="file" name="image" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required="">
-                                    <div class="invalid-feedback">
-                                        Please choose a username.
-                                    </div>
-                                </div>
-                            </div>
-                        <div class="col-md-4 mb-10">
-                                <label for="validationCustomUsername">Username</label>
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text" id="inputGroupPrepend">@</span>
-                                    </div>
-                                    <input type="text" name="username" class="form-control" id="validationCustomUsername" placeholder="Username" aria-describedby="inputGroupPrepend" required="">
-                                    <div class="invalid-feedback">
-                                        Please choose a username.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 mb-10">
-                                <label for="validationCustom01">Your Email:</label>
-                                <input type="email" name="email" class="form-control" id="validationCustom01" placeholder="Enter your Email" required="">
-                                <div class="valid-feedback">
-                                    Please select your Email!
-                                </div>
-                            </div>
-                            <div class="col-md-4 mb-10">
-                                <label for="validationCustom02">Password</label>
-                                <input type="password" name="password" class="form-control" id="validationCustom02" placeholder="Create a password" required="">
-                                <div class="valid-feedback">
-                                    Please create a password!
-                                </div>
-                            </div>
+            <h5 class="title-text">Create Slider</h5>
+            <div class="container">
+                <section class="section register d-flex flex-column align-items-center justify-content-center py-4">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-10 col-md-10 d-flex flex-column align-items-center justify-content-center">
+                                <div class="card mb-3">
+                                    <div class="card-body">
+                                        <form action="" method="post" class="row g-3 needs-validation" novalidate enctype="multipart/form-data">
+                                            <div class="col-12 mb-10">
+                                                <label for="validationCustomUsername">Slider Photo</label>
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="inputGroupPrepend">@</span>
+                                                    </div>
+                                                    <input type="file" name="image" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required="">
+                                                    <div class="invalid-feedback">
+                                                        Please choose a file.
+                                                    </div>
+                                                </div>
+                                            </div>
+                              
+                                       
+                                            <div class="col-md-12 mb-10">
+                                                <!-- Summernote HTML Editor -->
+                                                <div class="title">
+                                                    <label for="validationCustomUsername">Slider Heading</label>
+                                                    <textarea type="text" name="heading" class="form-control"placeholder="Please choose a heading" aria-describedby="inputGroupPrepend" required="" id="summernote"></textarea>
+                    
+                                                </div>
+                                            </div>
+    
+                                            <div class="col-md-12 mb-10">
+                                                <label for="validationCustomdescription">Slider Description</label>
+                                                <div class="input-group">
+                                                    <input type="text" name="sub_heading" class="form-control" id="validationCustomheading" placeholder="Please choose a description" aria-describedby="inputGroupPrepend" required="">
+                                                    <div class="invalid-feedback">
+                                                        Please choose a description.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 mb-10">
+                                                <label" for="validationCustombutton">Slider Button</label>
+                                                <div class="input-group">
+                                                    <input type="text" name="btn" class="form-control" id="validationCustomheading" placeholder="Please choose a Button" aria-describedby="inputGroupPrepend" required="">
+                                                    <div class="invalid-feedback">
+                                                        Please choose a button.
+                                                    </div>
+                                                </div>
+                                            </div>
 
-                        </div>
-                        <div class="form-group">
-                            <div class="form-check custom-control custom-checkbox">
-                                <input type="checkbox" class="form-check-input custom-control-input" id="invalidCheck" required="">
-                                <label class="form-check-label custom-control-label" for="invalidCheck">
-                                    Agree to terms and conditions
-                                </label>
-                                <div class="invalid-feedback">
-                                    You must agree before submitting.
+                                            <div class="col-md-12 mb-10">
+                                                <label" for="validationCustombutton">Slider Button Link(Optional)</label>
+                                                <div class="input-group">
+                                                    <input type="http" name="btn_link" class="form-control" id="validationCustomheading" placeholder="Please choose a Button" aria-describedby="inputGroupPrepend" required="">
+                                                    <div class="invalid-feedback">
+                                                        Button Link
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-3">
+                                                <input class="btn btn-primary" type="submit" name="submit" value="Create Slider">
+                                            </div>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                       <input type="submit" name="submit" value="Create" class="btn btn-primary">
-                    </form>
-                </div>
+                    </div>
+
+                </section>
+
             </div>
         </section>
     </div>

@@ -1,5 +1,4 @@
 <?php
-session_start();
 require("controller/DashbordController.php");
 $dashbord = new Dashbord();
 require('template/header.php');

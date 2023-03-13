@@ -64,7 +64,7 @@ if($result == 100 ){
                                     </div>
                                     <input type="file" name="image" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required="">
                                     <div class="invalid-feedback">
-                                        Please choose a username.
+                                        Please choose a file.
                                     </div>
                                 </div>
                             </div>

@@ -1,6 +1,5 @@
 <?php
-session_start();
-require('connection/connection.php');
+
 	require('template/header.php');
 	require('template/breadcrumb.php');
 	?>

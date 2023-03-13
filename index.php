@@ -1,18 +1,22 @@
 <?php
-session_start();
+require('front-controller/FrontendController.php');
+$obj = new FrontendController();
+$slider = $obj->displaySlider();
 require('template/header.php');
 ?>
 	<!-- Start Hero Area -->
 	<section class="hero-area">
 		<div class="hero-slider-full owl-carousel">
+		
+		<?php foreach($slider as $sliderData){?>
 			<!-- Single -->
-			<div class="hero-slider-single" style="background-image: url('assets/img/slider1.jpg');">
+			<div class="hero-slider-single" style="background-image: url('admin/uploads/slider/<?php echo $sliderData['photo']?>');">
 				<div class="container">
 					<div class="row">
 						<div class="col-lg-7">
 							<div class="hero-slider-single-content">
 								<div class="hero-slider-single-content-full">
-									<h2>Take the worlds best <span>idea here</span></h2>
+									<h2><?php echo $sliderData['heading'];?></h2>
 									<p>Donec scelerisque dolor id nunc dictum, interdum gravida mauris rhoncus. Aliquam at ultrices nunc.</p>
 									<div class="slider-btn">
 										<a class="button-1" href="#">Learn More</a>
@@ -23,24 +27,8 @@ require('template/header.php');
 					</div>
 				</div>
 			</div>
-			<!-- Single -->
-			<div class="hero-slider-single" style="background-image: url('assets/img/slider2.jpg');">
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-7">
-							<div class="hero-slider-single-content">
-								<div class="hero-slider-single-content-full">
-									<h2>Take the worlds best <span>idea here</span></h2>
-									<p>Donec scelerisque dolor id nunc dictum, interdum gravida mauris rhoncus. Aliquam at ultrices nunc.</p>
-									<div class="slider-btn">
-										<a class="button-1" href="#">Learn More</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+			<?php }?>
+
 		</div>
 	</section>
 	<!-- End Hero Area -->

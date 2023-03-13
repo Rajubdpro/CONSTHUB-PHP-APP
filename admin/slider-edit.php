@@ -1,26 +1,30 @@
 <?php
-/**--------------------------
- * #Start Require connection
- ----------------------------*/
-require("controller/UserController.php");
-$user = new UserController();
+
+/**
+ *  Start require section
+ * require Controller.php,Header.php
+ */
+require("controller/SliderController.php");
+$slider = new SliderController();
+
 require('template/header.php');
 
-/**-------------------------
- * #End  Require connection
- ---------------------------*/
+/**
+ *  End require section
+ * require Controller.php,Header.php
+ */
 
 /**-------------------------
- *  Start Edit user details
+ *  Start Edit slider details
  --------------------------*/
 
-if (isset($_GET['editid'])) {
-    $result =  $user->edit(($_GET['editid']));
+ if (isset($_GET['editid'])) {
+    $result =  $slider->edit(($_GET['editid']));
 }
 /*----fatch record for updation---*/
 if (isset($_GET['editid'])) {
     $editid = $_GET['editid'];
-    $result = $user->edit($editid);
+    $result = $slider->edit($editid);
 }
 
 /**-----------------------
@@ -32,90 +36,111 @@ if (isset($_GET['editid'])) {
  *---------------------*/
 
 if (isset($_POST['update'])) {
-    $user->updateuser($_POST);
+    $slider->update($_POST);
 } //if isset close
 
 /**--------------------
  * # End Update data
  ----------------------*/
 ?>
-<div class="row">
-    <div class="col-xl-12 mt-5">
-        <section class="ap-sec-wrapper title">
-            <h5 class="title-text">Update User</h5>
-            <div class="row">
-                <div class="col-sm">
-                    <form class="needs-validation" novalidate="" action="" method="post" enctype="multipart/form-data">
-                        <div class="row">
-                        <div class="col-md-4 mb-10">
-                                <label for="validationCustomUsername">User</label>
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text" id="inputGroupPrepend">@</span>
-                                    </div>
-                                    <input type="file" value="<?php echo $result['photo']; ?>" name="image" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required="">
-                                    <img width="100" src="uploads/<?php echo $result['photo']; ?>">
-                                    <div class="invalid-feedback">
-                                        Please choose a username.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 mb-10">
-                                <label for="validationCustomUsername">Username</label>
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text" id="inputGroupPrepend">@</span>
-                                    </div>
-                                    <input type="text" value="<?php echo $result['username']; ?>" name="username" class="form-control" id="validationCustomUsername" placeholder="Username" aria-describedby="inputGroupPrepend" required="">
-                                    <div class="invalid-feedback">
-                                        Please choose a username.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 mb-10">
-                                <label for="validationCustom01">Your Email:</label>
-                                <input type="email" value="<?php echo $result['email']; ?>" name="email" class="form-control" id="validationCustom01" placeholder="Enter your Email" required="">
-                                <div class="valid-feedback">
-                                    Please update your Email!
-                                </div>
-                            </div>
-                            <div class="col-md-4 mb-10">
-                                <label for="validationCustom02">Password</label>
-                                <input type="password" value="<?php echo $result['password']; ?>" name="password" class="form-control" id="validationCustom02" placeholder="Create a password" required="">
-                                <div class="valid-feedback">
-                                    Please update a password!
-                                </div>
-                            </div>
 
-                        </div>
-                        <div class="form-group">
-                            <div class="form-check custom-control custom-checkbox">
-                                <input type="checkbox" class="form-check-input custom-control-input" id="invalidCheck" required="">
-                                <label class="form-check-label custom-control-label" for="invalidCheck">
-                                    Agree to terms and conditions
-                                </label>
-                                <div class="invalid-feedback">
-                                    You must agree before submitting.
+
+
+<!------------------------------
+* #Start Slider List Section
+------------------------------>
+<div class="row">
+    <div class="col-xl-12  col-md-12 mt-5">
+        <section class="ap-sec-wrapper title">
+            <h5 class="title-text">Update Slider</h5>
+            <div class="container">
+                <section class="section register d-flex flex-column align-items-center justify-content-center py-4">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-10 col-md-10 d-flex flex-column align-items-center justify-content-center">
+                                <div class="card mb-3">
+                                    <div class="card-body">
+                                        <form action="" method="post" class="row g-3 needs-validation" novalidate enctype="multipart/form-data">
+                                            <div class="col-12 mb-10">
+                                                <label for="validationCustomUsername">Slider Photo</label>
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="inputGroupPrepend">@</span>
+                                                    </div>
+                                                    <input type="file" value="<?php echo $result['photo']; ?>" name="image" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required="">
+                                                    <img width="100" src="uploads/slider/<?php echo $result['photo']; ?>">
+                                                    <div class="invalid-feedback">
+                                                        Please choose a file.
+                                                    </div>
+                                                </div>
+                                            </div>
+                              
+                                            <div class="col-md-12 mb-10">
+                                                <!-- Summernote HTML Editor -->
+                                                <div class="title">
+                                                    <label for="validationCustomUsername">Slider Heading</label>
+                                                    <textarea " type="text" name="heading" class="form-control"placeholder="Please choose a heading" aria-describedby="inputGroupPrepend" required="" id="summernote"><?php echo $result['heading'];?></textarea>
+                    
+                                                </div>
+                                            </div>
+    
+                                            <div class="col-md-12 mb-10">
+                                                <label for="validationCustomdescription">Slider Description</label>
+                                                <div class="input-group">
+                                                    <input type="text" value="<?php echo $result['sub_heading']; ?>" name="sub_heading" class="form-control" id="validationCustomheading" placeholder="Please choose a description" aria-describedby="inputGroupPrepend" required="">
+                                                    <div class="invalid-feedback">
+                                                        Please choose a description.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 mb-10">
+                                                <label" for="validationCustombutton">Slider Button</label>
+                                                <div class="input-group">
+                                                    <input type="text" value="<?php echo $result['btn']; ?>" name="btn" class="form-control" id="validationCustomheading" placeholder="Please choose a Button" aria-describedby="inputGroupPrepend" required="">
+                                                    <div class="invalid-feedback">
+                                                        Please choose a button.
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-12 mb-10">
+                                                <label" for="validationCustombutton">Slider Button Link(Optional)</label>
+                                                <div class="input-group">
+                                                    <input type="http" value="<?php echo $result['btn_link']; ?>" name="btn_link" class="form-control" id="validationCustomheading" placeholder="Please choose a Button" aria-describedby="inputGroupPrepend" required="">
+                                                    <div class="invalid-feedback">
+                                                        Button Link
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-3">
+                                            <input type="hidden" id="update" name="hid" value="<?php echo $result['id'] ?>">
+                                            <input type="submit" name="update" id="update" value="Update Slider" class="btn btn-lg btn-primary">
+                                            </div>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <input type="hidden" id="update" name="hid" value="<?php echo $result['id'] ?>">
-                        <input type="submit" name="update" id="update" value="Update" class="btn btn-primary">
-                    </form>
-                </div>
+                    </div>
+
+                </section>
+
             </div>
         </section>
     </div>
 </div>
 
-<!----------------------
-#Start footer connection 
------------------------->
+<!------------------------------
+* #End User List Section
+------------------------------>
 
+<!------------------------------
+* #Start footer section require
+------------------------------>
 <?php
 require('template/footer.php');
 ?>
-
-<!----------------------
-#End footer connection 
------------------------->
+<!------------------------------
+* #End footer section require
+------------------------------>

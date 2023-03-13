@@ -28,7 +28,7 @@ require('template/header.php');
             <div class="table-responsive">
                 <table class="table table-hover table-bordered" id="sampleTable">
                     <thead>
-                        <tr>
+                    <tr class="text-center">
                             <th>Id</th>
                             <th width="80">Photo</th>
                             <th>Username</th>

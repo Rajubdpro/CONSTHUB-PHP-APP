@@ -5,8 +5,8 @@
  * Require UserController.php, header.php
  */
 
-require("controller/UserController.php");
-$user = new UserController();
+require("controller/SliderController.php");
+$user = new SliderController();
 $data = $user->index();
 require('template/header.php');
 
@@ -22,18 +22,19 @@ require('template/header.php');
 --------------------------->
 
 <div class="col-md-12">
-    <a href="user-create.php" class="btn btn-primary mb-2">create</a>
+    <a href="slider-create.php" class="btn btn-primary mb-2">create</a>
     <div class="title">
         <div class="title-body">
             <div class="table-responsive">
                 <table class="table table-hover table-bordered" id="sampleTable">
                     <thead>
-                        <tr>
+                        <tr class="text-center">
                             <th>Id</th>
-                            <th width="80">Photo</th>
-                            <th>Username</th>
-                            <th>Email</th>
-                            <th>Password</th>
+                            <th width="80">	Photo</th>
+                            <th>Heading</th>
+                            <th>Description</th>
+                            <th>Button</th>
+                            <th>Button_link</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -48,19 +49,20 @@ require('template/header.php');
                                     <td><?php echo $id++; ?></td>
                                     <td>
                                         <?php if($value['photo']){ ?>
-                                        <image style="width:80px"src="uploads/<?php echo $value['photo']; ?>">
+                                        <image style="width:80px"src="uploads/slider/<?php echo $value['photo']; ?>">
                                         <?php }else{ ?>
-                                         <image style="width:80px"src="uploads/user.png">
+                                         <image style="width:80px"src="uploads/slider/user.png">
                                        <?php } ?>
                                     
                                     </td>
-                                    <td><?php echo $value['username']; ?></td>
-                                    <td><?php echo $value['email']; ?></td>
-                                    <td><?php echo $value['password']; ?></td>
+                                    <td><?php echo $value['heading']; ?></td>
+                                    <td><?php echo $value['sub_heading']; ?></td>
+                                    <td><?php echo $value['btn']; ?></td>
+                                    <td><?php echo $value['btn_link']; ?></td>
                                     <td>
 
-                                        <a href="user-edit.php?editid=<?php echo $value['id']; ?>" class="btn btn-info">Edit</a>
-                                        <a href="user-delete.php?deleteid=<?php echo $value['id'] ?>" class="btn btn-danger">Delete</a>
+                                        <a href="slider-edit.php?editid=<?php echo $value['id']; ?>" class="btn btn-info">Edit</a>
+                                        <a href="slider-delete.php?deleteid=<?php echo $value['id'] ?>" class="btn btn-danger">Delete</a>
                                     </td>
                                 </tr>
                         <?php

@@ -34,6 +34,3 @@ class Login extends Database
 
     
 }
-
-
-?>

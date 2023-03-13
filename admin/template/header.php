@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <!-- Meta  -->
     <meta charset="utf-8" />
@@ -17,26 +18,28 @@
             <script src="assets/js/html5shiv.min.js"></script>
             <script src="assets/js/respond.min.js"></script>
         <![endif]-->
-            <!-- Summernote CSS -->
+    <!-- Summernote CSS -->
     <link rel="stylesheet" href="assets/vendors/summernote/css/summernote.min.css">
     <!-- Template assets CSS -->
     <link rel="stylesheet" type="text/css" href="assets/css/assets.css" />
     <!-- Main style -->
     <link rel="stylesheet" type="text/css" href="assets/css/dashboard.css" />
     <style>
-     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap');
-a{
-  text-decoration: none;
-}
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  list-style-type: none;
-  text-decoration: none;
-  font-family: 'Montserrat', sans-serif;
-  font-family: 'Poppins', sans-serif;
-}
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+        a {
+            text-decoration: none;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            list-style-type: none;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-family: 'Poppins', sans-serif;
+        }
     </style>
 </head>
 
@@ -56,8 +59,7 @@ a{
                 <!-- header right menu start -->
                 <ul class="adminpopular-header-navigation">
                     <li>
-                        <a href="#" class="adminpopular-material-button adminpopular-search-toggle"><i
-                                class="fa fa-search"></i></a>
+                        <a href="#" class="adminpopular-material-button adminpopular-search-toggle"><i class="fa fa-search"></i></a>
                     </li>
                     <li>
                         <a href="#" class="adminpopular-material-button adminpopular-submenu-toggle">
@@ -203,8 +205,7 @@ a{
                     </li>
                     <li>
                         <a href="#" class="adminpopular-material-button adminpopular-submenu-toggle">
-                            <span class="adminpopular-user-avatar"><img alt="" src="assets/images/pic.jpg" width="32"
-                                    height="32" /></span>
+                            <span class="adminpopular-user-avatar"><img alt="" src="assets/images/pic.jpg" width="32" height="32" /></span>
                         </a>
                         <div class="adminpopular-header-submenu">
                             <ul>
@@ -224,10 +225,8 @@ a{
             <div class="adminpopular-search-bar">
                 <form class="adminpopular-search-form">
                     <div class="adminpopular-search-input-wrapper">
-                        <input type="text" name="qq" placeholder="search something..."
-                            class="adminpopular-search-input" />
-                        <button type="submit" name="search" class="adminpopular-search-submit"><i
-                                class="ti-arrow-right"></i></button>
+                        <input type="text" name="qq" placeholder="search something..." class="adminpopular-search-input" />
+                        <button type="submit" name="search" class="adminpopular-search-submit"><i class="ti-arrow-right"></i></button>
                     </div>
                     <span class="adminpopular-search-close adminpopular-search-toggle">
                         <i class="ti-close"></i>
@@ -238,8 +237,8 @@ a{
         </div>
     </header>
     <!-- header end -->
-<!--Main container start -->
-<main class="adminpopular-wrapper">
-    <?php
-    require('template/sideber.php');
-    ?>
+    <!--Main container start -->
+    <main class="adminpopular-wrapper">
+        <?php
+        require('template/sideber.php');
+        ?>

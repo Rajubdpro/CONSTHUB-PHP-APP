@@ -23,23 +23,11 @@ class SliderController extends Database
 {
 
 
-    /**
-     * Start login check section
-     */
-    // public function __construct(){
-    //     if(!isset($_SESSION['id'])){
-    //         header('location:login.php');
-    //     }
-    // }
 
 
 
     /**
      * #Start Index Method Section
-     * 
-     * #Start Display user record
-     * #Creating Index user
-     * #Select data into User table
      */
     public function index()
     {
@@ -54,20 +42,11 @@ class SliderController extends Database
     } //display record close
 
     /**
-     * #End Index user section
-     * 
-     * #End Display user record
-     * #Creating Index user
-     * #Select data into user table
+     * #End Index slider section
      */
 
     /**
-     * #Start edit user section
-     *
-     * #Creating Edit user
-     * #Edit data into User list
-     * # @param $editid
-     * 
+     * #Start edit slider section
      */
     public function edit($editid)
     {
@@ -80,21 +59,11 @@ class SliderController extends Database
     }
 
     /**
-     * End Edit user section
-
-     * #End edit User record
-     * #Creating Edit class
-     * #Edit data into User 
-     * #Using @param ($editid)
+     * End Edit slider section
      */
 
     /**
-     * #Start user create section
-     * 
-     * Use user
-     * @param string $username
-     * @param string $email
-     * @param string @password
+     * #Start slider create section
      * 
      */
     public function create($data)
@@ -108,23 +77,22 @@ class SliderController extends Database
             $file_type = $_FILES['image']['type'];
             $exploaded = explode('.', $_FILES['image']['name']);
             $file_ext = strtolower(end($exploaded));
-            
+
             $expensions = array("jpeg", "jpg", "png");
-            
+
             if (in_array($file_ext, $expensions) === false) {
                 $errors[] = "extension not allowed, please choose a JPEG or PNG file.";
             }
-            
+
             if ($file_size > 2097152) {
                 $errors[] = 'File size must be excately 2 MB';
             }
-            
+
             if (empty($errors) == true) {
                 move_uploaded_file($file_tmp, "uploads/slider/" . $file_name);
             } else {
                 print_r($errors);
             }
-
         }
         $heading = $data['heading'];
         $desc = $data['sub_heading'];
@@ -140,25 +108,15 @@ class SliderController extends Database
     }
 
     /**
-     * #End user create section
-     * 
-     *   #Use user 
-     *   @param string $username
-     *   @param string $email
-     *   @param string @password
-     * 
+     * #End slider create section
      */
 
     /**
-     * #Start Update user section
-     * 
-     * Use Update user
-     * Use @param $post
-     * 
+     * #Start Update slider section
      */
     public function update($data)
     {
-        
+
         if (isset($_FILES['image'])) {
             $errors = array();
             $file_name = $_FILES['image']['name'];
@@ -167,23 +125,22 @@ class SliderController extends Database
             $file_type = $_FILES['image']['type'];
             $exploaded = explode('.', $_FILES['image']['name']);
             $file_ext = strtolower(end($exploaded));
-            
+
             $expensions = array("jpeg", "jpg", "png");
-            
+
             if (in_array($file_ext, $expensions) === false) {
                 $errors[] = "extension not allowed, please choose a JPEG or PNG file.";
             }
-            
+
             if ($file_size > 2097152) {
                 $errors[] = 'File size must be excately 2 MB';
             }
-            
+
             if (empty($errors) == true) {
                 move_uploaded_file($file_tmp, "uploads/slider/" . $file_name);
             } else {
                 print_r($errors);
             }
-
         }
 
         $heading = $data['heading'];
@@ -200,17 +157,13 @@ class SliderController extends Database
     } //update reccord close
 
     /**
-     *  #End Update user section
-     *  Update user
-     *  @param $post
-     * 
+     *  #End Update slider section
      */
 
     /** 
-     *   #Start Delete user section
-     *   Delete user
-     *   @param mixed $post
+     *   #Start Delete slider section
      */
+
     public function deleteslider($deleteid)
     {
         $sql = "DELETE FROM slider WHERE id='$deleteid'";
@@ -222,9 +175,7 @@ class SliderController extends Database
     } //delate record
 
     /**
-     *   #End Delete user section
-     *   Delete user
-     *   @param mixed $post
+     *   #End Delete slider section
      */
 }
 
@@ -234,8 +185,3 @@ class SliderController extends Database
  * #Extands main database class
  * #User create,update,edit,delete class Using
  */
-
-?>
-
-
-
